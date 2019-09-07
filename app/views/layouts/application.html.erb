@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nomster</title>
+    <title>CarpeOmNom</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,6 +15,7 @@
        <span class="navbar-toggler-icon"></span>
      </button>
      <a class="navbar-brand" href="#">CarpeOmNom</a>
+     <%= link_to 'CarpeOmNom', '#', class: 'navbar-brand' %>
 
      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
@@ -22,8 +23,12 @@
            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#">Link</a>
+             <%= link_to new_place_path, class: 'nav-link' do %>
+             <i class="fa fa-plus-circle"></i>
+             New Place
+             <% end %>
          </li>
+      </ul>
      </div>
    </nav>
     <%= yield %>
